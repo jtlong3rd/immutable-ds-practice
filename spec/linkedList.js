@@ -19,4 +19,13 @@ describe('Linked List', function() {
       expect(list3.getHead()).to.equal(2);
     });
   });
+
+  describe('getTail', function() {
+    it('should return the tail', function() {
+      expect(list1.getTail()).to.equal(null);
+      expect(list2.getTail()).to.equal(null);
+      expect(list3.getTail()).to.equal(list2);
+    });
+  });
+
 });

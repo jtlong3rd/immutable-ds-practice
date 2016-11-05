@@ -3,7 +3,12 @@ module.exports.LinkedList = (head = null, tail = null) => {
     return head;
   };
 
+  const getTail = () => {
+    return tail;
+  };
+
   return {
-    getHead
+    getHead,
+    getTail
   };
 };
