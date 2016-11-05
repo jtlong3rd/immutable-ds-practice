@@ -1,4 +1,4 @@
-module.exports.LinkedList = (head = null, tail = null) => {
+const LinkedList = (head = null, tail = null) => {
   const getHead = () => {
     return head;
   };
@@ -25,3 +25,19 @@ module.exports.LinkedList = (head = null, tail = null) => {
     toArray
   };
 };
+
+LinkedList.toList = (array) => {
+  const [head, ...tail] = array;
+
+  if (array.length === 0) {
+    return LinkedList();
+  }
+
+  if (array.length === 1) {
+    return LinkedList(head);
+  }
+
+  return LinkedList(head, LinkedList.toList(tail));
+};
+
+module.exports.LinkedList = LinkedList;
