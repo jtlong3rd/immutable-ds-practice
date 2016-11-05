@@ -28,6 +28,32 @@ describe('Linked List', function() {
     });
   });
 
+  describe('removeHead', function() {
+    it('should exist', function() {
+      expect(list1.removeHead).to.be.a('function');
+    });
+
+    it('should remove a node from the front of a list', function() {
+      const newList1 = list4.removeHead();
+      const newList2 = newList1.removeHead();
+      const newList3 = newList2.removeHead();
+      const newList4 = newList3.removeHead();
+
+      expect(newList1.getHead()).to.equal(2);
+      expect(newList1.getTail().getHead()).to.equal(1);
+      expect(newList1.getTail().getTail()).to.equal(null);
+
+      expect(newList2.getHead()).to.equal(1);
+      expect(newList2.getTail()).to.equal(null);
+
+      expect(newList3.getHead()).to.equal(null);
+      expect(newList3.getTail()).to.equal(null);
+
+      expect(newList4.getHead()).to.equal(null);
+      expect(newList4.getTail()).to.equal(null);
+    });
+  });
+
   describe('length', function() {
     it('should exist', function() {
       expect(list1.length).to.be.a('function');
