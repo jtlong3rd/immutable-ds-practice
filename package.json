@@ -1,0 +1,19 @@
+{
+  "name": "immutable-ds-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "run mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtlong3rd/immutable-ds-practice.git"
+  },
+  "author": "Jamie Long",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtlong3rd/immutable-ds-practice/issues"
+  },
+  "homepage": "https://github.com/jtlong3rd/immutable-ds-practice#readme"
+}
