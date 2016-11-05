@@ -13,6 +13,21 @@ describe('Linked List', function() {
     });
   });
 
+  describe('addHead', function() {
+    it('should exist', function() {
+      expect(list1.addHead).to.be.a('function');
+    });
+
+    it('should add a new node to the front of a list', function() {
+      const newList = LinkedList().addHead(1).addHead(2).addHead(3);
+
+      expect(newList.getHead()).to.equal(3);
+      expect(newList.getTail().getHead()).to.equal(2);
+      expect(newList.getTail().getTail().getHead()).to.equal(1);
+      expect(newList.getTail().getTail().getTail()).to.equal(null);
+    });
+  });
+
   describe('length', function() {
     it('should exist', function() {
       expect(list1.length).to.be.a('function');

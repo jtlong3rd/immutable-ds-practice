@@ -1,4 +1,16 @@
 const LinkedList = (head = null, tail = null) => {
+  const addHead = (newHead) => {
+    if (head === null) {
+      return LinkedList(newHead);
+    }
+
+    if (tail === null) {
+      return LinkedList(newHead, LinkedList(head));
+    }
+
+    return LinkedList(newHead, LinkedList(head, tail));
+  };
+
   const length = () => {
     if (head === null) {
       return 0;
@@ -32,6 +44,7 @@ const LinkedList = (head = null, tail = null) => {
   };
 
   return {
+    addHead,
     length,
     getHead,
     getTail,
