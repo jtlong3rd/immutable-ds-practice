@@ -66,6 +66,13 @@ describe('Linked List', function() {
       expect(list3.equals(list4)).to.be.false;
       expect(list4.equals(list3)).to.be.false;
     });
+
+    it('should return true when two lists have equal values', function() {
+      expect(list1.equals(list1)).to.be.true;
+      expect(list2.equals(list2)).to.be.true;
+      expect(list3.equals(list3)).to.be.true;
+      expect(list4.equals(list4)).to.be.true;
+    });
   });
 
   describe('length', function() {
