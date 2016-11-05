@@ -56,7 +56,7 @@ describe('Linked List', function() {
     it('should return a linked list version of an array', function() {
       const newList1 = LinkedList.toList([]);
       const newList2 = LinkedList.toList([1]);
-      const newList3 = LinkedList.toList([2, 1]);
+      const newList3 = LinkedList.toList([3, 2, 1]);
 
       expect(newList1.getHead()).to.equal(null);
       expect(newList1.getTail()).to.equal(null);
@@ -64,9 +64,10 @@ describe('Linked List', function() {
       expect(newList2.getHead()).to.equal(1);
       expect(newList2.getTail()).to.equal(null);
 
-      expect(newList3.getHead()).to.equal(2);
-      expect(newList3.getTail().getHead()).to.equal(1);
-      expect(newList3.getTail().getTail()).to.equal(null);
+      expect(newList3.getHead()).to.equal(3);
+      expect(newList3.getTail().getHead()).to.equal(2);
+      expect(newList3.getTail().getTail().getHead()).to.equal(1);
+      expect(newList3.getTail().getTail().getTail()).to.equal(null);
     });
 
 
