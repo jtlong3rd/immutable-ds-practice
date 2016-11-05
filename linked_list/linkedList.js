@@ -1,4 +1,16 @@
 const LinkedList = (head = null, tail = null) => {
+  const length = () => {
+    if (head === null) {
+      return 0;
+    }
+
+    if (tail === null) {
+      return 1;
+    }
+
+    return tail.length() + 1;
+  };
+
   const getHead = () => {
     return head;
   };
@@ -7,19 +19,20 @@ const LinkedList = (head = null, tail = null) => {
     return tail;
   };
 
-  const toArray = (result = []) => {
+  const toArray = () => {
     if (head === null) {
-      return result;
+      return [];
     }
 
     if (tail === null) {
-      return [...result, head];
+      return [head];
     }
 
-    return [...result, head, ...tail.toArray()];
+    return [head, ...tail.toArray()];
   };
 
   return {
+    length,
     getHead,
     getTail,
     toArray

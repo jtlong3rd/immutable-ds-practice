@@ -5,10 +5,24 @@ describe('Linked List', function() {
   const list1 = LinkedList();
   const list2 = LinkedList(1);
   const list3 = LinkedList(2, list2);
+  const list4 = LinkedList(3, list3);
 
   describe('constructor', function() {
     it('should exist', function() {
       expect(LinkedList).to.be.a('function');
+    });
+  });
+
+  describe('length', function() {
+    it('should exist', function() {
+      expect(list1.length).to.be.a('function');
+    });
+
+    it('should return the length of the list', function() {
+      expect(list1.length()).to.equal(0);
+      expect(list2.length()).to.equal(1);
+      expect(list3.length()).to.equal(2);
+      expect(list4.length()).to.equal(3);
     });
   });
 
@@ -45,6 +59,7 @@ describe('Linked List', function() {
       expect(list1.toArray()).to.deep.equal([]);
       expect(list2.toArray()).to.deep.equal([1]);
       expect(list3.toArray()).to.deep.equal([2, 1]);
+      expect(list4.toArray()).to.deep.equal([3, 2, 1]);
     });
   });
 
@@ -69,8 +84,5 @@ describe('Linked List', function() {
       expect(newList3.getTail().getTail().getHead()).to.equal(1);
       expect(newList3.getTail().getTail().getTail()).to.equal(null);
     });
-
-
   });
-
 });
