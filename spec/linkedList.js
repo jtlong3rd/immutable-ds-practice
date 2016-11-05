@@ -54,6 +54,20 @@ describe('Linked List', function() {
     });
   });
 
+  describe('equals', function() {
+    it('should exist', function() {
+      expect(list1.equals).to.be.a('function');
+    });
+
+    it('should return false for two lists of different length', function() {
+      expect(list1.equals(list2)).to.be.false;
+      expect(list2.equals(list1)).to.be.false;
+
+      expect(list3.equals(list4)).to.be.false;
+      expect(list4.equals(list3)).to.be.false;
+    });
+  });
+
   describe('length', function() {
     it('should exist', function() {
       expect(list1.length).to.be.a('function');
