@@ -31,7 +31,7 @@ const LinkedList = (head = null, tail = null) => {
       return true;
     }
 
-    if ( (tail === null && otherList !== null) || (tail !== null && otherList === null) ) {
+    if ( (tail === null && otherTail !== null) || (tail !== null && otherTail === null) ) {
       return false;
     }
 
