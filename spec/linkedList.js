@@ -73,6 +73,15 @@ describe('Linked List', function() {
       expect(list3.equals(list3)).to.be.true;
       expect(list4.equals(list4)).to.be.true;
     });
+
+    it('should return false when two lists have different values', function() {
+      const newList3 = LinkedList(2, list2);
+      const newList4 = LinkedList(1, list3);
+      const newList4Prime = LinkedList(1, newList3);
+
+      expect(list3.equals(newList3)).to.be.true;
+      expect(newList4.equals(newList4Prime)).to.be.true;
+    });
   });
 
   describe('length', function() {
