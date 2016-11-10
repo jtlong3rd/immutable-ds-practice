@@ -54,6 +54,12 @@ describe('Linked List', function() {
     });
   });
 
+  describe('initialSegment', function() {
+    it('should exist', function() {
+      expect(lis1.initialSegment).to.be.a('function');
+    });
+  });
+
   describe('equals', function() {
     it('should exist', function() {
       expect(list1.equals).to.be.a('function');
