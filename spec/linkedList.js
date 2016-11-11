@@ -56,7 +56,11 @@ describe('Linked List', function() {
 
   describe('initialSegment', function() {
     it('should exist', function() {
-      expect(lis1.initialSegment).to.be.a('function');
+      expect(list1.initialSegment).to.be.a('function');
+    });
+
+    it('should detect improper initial segments', function() {
+      expect(list1.initialSegment(list1)).to.be.true;
     });
   });
 
