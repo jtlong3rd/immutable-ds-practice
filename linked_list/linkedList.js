@@ -27,7 +27,7 @@ const LinkedList = (head = null, tail = null) => {
       return false;
     }
 
-    if (tail === null && otherTail === null) {
+    if (tail === null || otherTail === null) {
       return true;
     }
 

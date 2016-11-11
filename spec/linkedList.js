@@ -62,6 +62,13 @@ describe('Linked List', function() {
     it('should detect improper initial segments', function() {
       expect(list1.initialSegment(list1)).to.be.true;
     });
+
+    it('should detect proper initial segments', function() {
+      const newList6 = LinkedList.toList([1, 2, 3]);
+      const newList7 = LinkedList.toList([1, 2, 3, 4]);
+
+      expect(newList6.initialSegment(newList7)).to.be.true;
+    });
   });
 
   describe('equals', function() {
