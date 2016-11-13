@@ -1,5 +1,5 @@
 const LinkedList = (head = null, tail = null) => {
-  const addHead = (newHead) => {
+  const addHead = newHead => {
     if (head === null) {
       return LinkedList(newHead);
     }
@@ -19,7 +19,7 @@ const LinkedList = (head = null, tail = null) => {
     return LinkedList(tail.getHead(), tail.getTail());
   };
 
-  const concat = (rhs) => {
+  const concat = rhs => {
     if (head === null) {
       return rhs;
     }
@@ -43,7 +43,7 @@ const LinkedList = (head = null, tail = null) => {
     return LinkedList(f(head), tail.map(f));
   };
 
-  const initialSegment = (otherList) => {
+  const initialSegment = otherList => {
     const otherHead = otherList.getHead();
     const otherTail = otherList.getTail();
 
@@ -58,7 +58,7 @@ const LinkedList = (head = null, tail = null) => {
     return tail.initialSegment(otherTail);
   };
 
-  const equals = (otherList) => {
+  const equals = otherList => {
     return initialSegment(otherList) && otherList.initialSegment(LinkedList(head, tail));
   };
 
@@ -108,7 +108,7 @@ const LinkedList = (head = null, tail = null) => {
   };
 };
 
-LinkedList.toList = (array) => {
+LinkedList.toList = array => {
   const [head, ...tail] = array;
 
   if (array.length === 0) {
