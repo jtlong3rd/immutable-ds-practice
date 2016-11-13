@@ -74,6 +74,8 @@ describe('Linked List', function() {
 
     it('should return a mapped copy of the linked list', function() {
       expect(LinkedList.toList([1, 2, 3, 4]).map(x => x * 2).toArray()).to.deep.equal([2, 4, 6, 8]);
+      expect(LinkedList.toList([1]).map(x => x * 2).toArray()).to.deep.equal([2]);
+      expect(LinkedList.toList([]).map(x => x * 2).toArray()).to.deep.equal([]);
     });
   });
 
