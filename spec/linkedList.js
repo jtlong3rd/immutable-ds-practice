@@ -54,6 +54,14 @@ describe('Linked List', function() {
     });
   });
 
+  describe('map', function() {
+    it('should exist', function() {
+      expect(list1.map).to.be.a('function');
+    });
+
+    expect(LinkedList.toList([1,2,3,4]).map(x => x * 2).toArray()).to.deep.equal([2,4,6,8]);
+  });
+
   describe('initialSegment', function() {
     it('should exist', function() {
       expect(list1.initialSegment).to.be.a('function');
