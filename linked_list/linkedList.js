@@ -43,6 +43,20 @@ const LinkedList = (head = null, tail = null) => {
     return LinkedList(f(head), tail.map(f));
   };
 
+  const filter = f => {
+    if (head === null) {
+      return LinkedList();
+    }
+
+    if (tail === null) {
+      return f(head) ? LinkedList(head) : LinkedList();
+    }
+
+    return f(head)
+      ? LinkedList(head, tail.filter(f))
+      : tail.filter(f);
+  };
+
   const initialSegment = otherList => {
     const otherHead = otherList.getHead();
     const otherTail = otherList.getTail();
@@ -99,6 +113,7 @@ const LinkedList = (head = null, tail = null) => {
     removeHead,
     concat,
     map,
+    filter,
     initialSegment,
     equals,
     length,
