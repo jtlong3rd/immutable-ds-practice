@@ -19,6 +19,18 @@ const LinkedList = (head = null, tail = null) => {
     return LinkedList(tail.getHead(), tail.getTail());
   };
 
+  const concat = (rhs) => {
+    if (head === null) {
+      return rhs;
+    }
+
+    if (tail === null) {
+      return LinkedList(head, rhs);
+    }
+
+    return LinkedList(head, tail.concat(rhs));
+  };
+
   const map = f => {
     if (head === null) {
       return LinkedList();
@@ -85,6 +97,7 @@ const LinkedList = (head = null, tail = null) => {
   return {
     addHead,
     removeHead,
+    concat,
     map,
     initialSegment,
     equals,

@@ -54,12 +54,27 @@ describe('Linked List', function() {
     });
   });
 
+  describe('concat', function() {
+    it('should exist', function() {
+      expect(list1.concat).to.be.a('function');
+    });
+
+    it('should concatenate linked lists', function() {
+      expect(LinkedList.toList([]).concat(LinkedList.toList([1, 2, 3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
+      expect(LinkedList.toList([1]).concat(LinkedList.toList([2, 3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
+      expect(LinkedList.toList([1, 2]).concat(LinkedList.toList([3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
+      expect(LinkedList.toList([1, 2, 3]).concat(LinkedList.toList([4])).toArray()).to.deep.equal([1, 2, 3, 4]);
+    });
+  });
+
   describe('map', function() {
     it('should exist', function() {
       expect(list1.map).to.be.a('function');
     });
 
-    expect(LinkedList.toList([1,2,3,4]).map(x => x * 2).toArray()).to.deep.equal([2,4,6,8]);
+    it('should return a mapped copy of the linked list', function() {
+      expect(LinkedList.toList([1, 2, 3, 4]).map(x => x * 2).toArray()).to.deep.equal([2, 4, 6, 8]);
+    });
   });
 
   describe('initialSegment', function() {
