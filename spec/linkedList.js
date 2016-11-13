@@ -102,10 +102,7 @@ describe('Linked List', function() {
     });
 
     it('should detect proper initial segments', function() {
-      const newList6 = LinkedList.toList([1, 2, 3]);
-      const newList7 = LinkedList.toList([1, 2, 3, 4]);
-
-      expect(newList6.initialSegment(newList7)).to.be.true;
+      expect(LinkedList.toList([1, 2, 3]).initialSegment(LinkedList.toList([1, 2, 3, 4]))).to.be.true;
     });
   });
 
