@@ -92,6 +92,20 @@ describe('Linked List', function() {
     });
   });
 
+  describe('reduce', function() {
+    it('should exist', function() {
+      expect(list1.reduce).to.be.a('function');
+    });
+
+    it('should return the reduction of a linked list', function() {
+      expect(LinkedList.toList([1, 2, 3]).reduce((x, y) => x + y, 0)).to.equal(6);
+      expect(LinkedList.toList([1, 2]).reduce((x, y) => x + y, 0)).to.equal(3);
+      expect(LinkedList.toList([1]).reduce((x, y) => x + y, 0)).to.equal(1);
+      expect(LinkedList.toList([]).reduce((x, y) => x + y, 0)).to.equal(0);
+    });
+  });
+
+
   describe('initialSegment', function() {
     it('should exist', function() {
       expect(list1.initialSegment).to.be.a('function');

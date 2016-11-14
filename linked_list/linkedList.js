@@ -57,6 +57,18 @@ const LinkedList = (head = null, tail = null) => {
       : tail.filter(f);
   };
 
+  const reduce = (f, acc) => {
+    if (head === null) {
+      return acc;
+    }
+
+    if (tail === null) {
+      return f(acc, head);
+    }
+
+    return tail.reduce(f, f(acc, head));
+  };
+
   const initialSegment = otherList => {
     const otherHead = otherList.getHead();
     const otherTail = otherList.getTail();
@@ -114,6 +126,7 @@ const LinkedList = (head = null, tail = null) => {
     concat,
     map,
     filter,
+    reduce,
     initialSegment,
     equals,
     length,
