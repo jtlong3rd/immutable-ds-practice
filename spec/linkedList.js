@@ -60,6 +60,7 @@ describe('Linked List', function() {
     });
 
     it('should concatenate linked lists', function() {
+      expect(LinkedList.toList([]).concat(LinkedList.toList([])).toArray()).to.deep.equal([]);
       expect(LinkedList.toList([]).concat(LinkedList.toList([1, 2, 3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
       expect(LinkedList.toList([1]).concat(LinkedList.toList([2, 3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
       expect(LinkedList.toList([1, 2]).concat(LinkedList.toList([3, 4])).toArray()).to.deep.equal([1, 2, 3, 4]);
