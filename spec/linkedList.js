@@ -107,7 +107,6 @@ describe('Linked List', function() {
     });
   });
 
-
   describe('initialSegment', function() {
     it('should exist', function() {
       expect(list1.initialSegment).to.be.a('function');
@@ -199,6 +198,16 @@ describe('Linked List', function() {
       expect(list2.toArray()).to.deep.equal([1]);
       expect(list3.toArray()).to.deep.equal([2, 1]);
       expect(list4.toArray()).to.deep.equal([3, 2, 1]);
+    });
+  });
+
+  describe('unit', function() {
+    it('should exist', function() {
+      expect(LinkedList.unit).to.be.a('function');
+    });
+
+    it('should return a wrapped value', function() {
+      expect(LinkedList.unit(2).toArray()).to.deep.equal([2]);
     });
   });
 

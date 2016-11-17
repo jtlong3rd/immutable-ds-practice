@@ -136,6 +136,10 @@ const LinkedList = (head = null, tail = null) => {
   };
 };
 
+LinkedList.unit = value => {
+  return LinkedList(value);
+};
+
 LinkedList.toList = array => {
   const [head, ...tail] = array;
 
