@@ -90,6 +90,7 @@ describe('Linked List', function() {
       expect(LinkedList.toList([2, 3, 4]).filter(x => x % 2 === 0).toArray()).to.deep.equal([2, 4]);
       expect(LinkedList.toList([1, 3]).filter(x => x % 2 === 0).toArray()).to.deep.equal([]);
       expect(LinkedList.toList([1]).filter(x => x % 2 === 0).toArray()).to.deep.equal([]);
+      expect(LinkedList.toList([]).filter(x => x % 2 === 0).toArray()).to.deep.equal([]);
     });
   });
 
