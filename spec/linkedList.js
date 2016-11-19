@@ -208,6 +208,7 @@ describe('Linked List', function() {
 
     it('should return a wrapped value', function() {
       expect(LinkedList.unit(2).toArray()).to.deep.equal([2]);
+      expect(LinkedList.unit([2]).toArray()).to.deep.equal([[2]]);
     });
   });
 
