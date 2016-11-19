@@ -80,6 +80,16 @@ describe('Linked List', function() {
     });
   });
 
+  describe('flatten', function() {
+    it('should exist', function() {
+      expect(list1.flatten).to.be.a('function');
+    });
+
+    it('should flatten a list of lists', function() {
+      expect(LinkedList(LinkedList(2)).flatten().toArray()).to.deep.equal([2]);
+    });
+  });
+
   describe('filter', function() {
     it('should exist', function() {
       expect(list1.filter).to.be.a('function');

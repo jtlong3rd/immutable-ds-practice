@@ -43,6 +43,13 @@ const LinkedList = (head = null, tail = null) => {
     return LinkedList(f(head), tail.map(f));
   };
 
+  const flatten = () => {
+    return LinkedList(head, tail).reduce(
+      (flattening, next) => flattening.concat(next),
+      LinkedList()
+    );
+  };
+
   const filter = f => {
     if (head === null) {
       return LinkedList();
@@ -125,6 +132,7 @@ const LinkedList = (head = null, tail = null) => {
     removeHead,
     concat,
     map,
+    flatten,
     filter,
     reduce,
     initialSegment,
